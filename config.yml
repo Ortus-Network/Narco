@@ -1,0 +1,26 @@
+#################
+# Narco v1.0.0
+#################
+
+
+# Toggle the Narco plugin (default: true)
+enabled: true
+
+# Set the header of our custom inventory (default: Narco)
+inventory-name: "Narco"
+
+# Sets the meta of all items
+item-meta:
+- "&cRight-click &fto use this drug"
+
+# This is where you put your drugs
+items:
+  WHEAT:
+    name: "Weed"
+    price: 500 # Price for 1 piece of the item
+    color: DARK_GREEN
+    cmd: /say {PLAYER} has just smoked some weed! # Execute command upon congestion
+    effects:
+      JUMP:
+        duration: 10 # Amount of time (in seconds) to apply the effect for
+        amplifier: 1 # Level of the effect (default: 1)

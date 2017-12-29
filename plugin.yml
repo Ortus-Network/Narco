@@ -1,0 +1,40 @@
+name: Narco
+main: com.ortus.narco.Narco
+version: 1.0.0
+author: Nicarpe
+
+commands:
+  drugs:
+    description: Show a GUI / list containing the available drugs
+    permission: narco.cmd.drugs
+
+permissions:
+  narco.*:
+    description: Gives access to all Narco commands
+    children:
+      narco.default: true
+      narco.admin: true
+      narco.cmd.*: true
+      narco.drugs: true
+  narco.admin.*:
+    description: Gives permissions to all default player commands
+    default: true
+    children:
+      narco.admin.drugs: true
+  narco.default:
+    description: Gives permissions to all default player commands
+    default: true
+    children:
+      narco.cmd.drugs: true
+      narco.drugs: true
+  narco.drugs:
+    description: Gives permission to use the different drugs
+    default: true
+  narco.cmd.drugs:
+    description: Gives permission to the /drugs command
+    default: true
+    children:
+      narco.cmd.drugs.help: true
+  narco.cmd.drugs.help:
+    description: Shows a help menu containing all /drugs commands
+    default: true
