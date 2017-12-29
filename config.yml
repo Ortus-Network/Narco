@@ -1,13 +1,11 @@
-#################
-# Narco v1.0.0
-#################
-
-
-# Toggle the Narco plugin (default: true)
+# Toggle plugin state
 enabled: true
 
-# Set the header of our custom inventory (default: Narco)
+# Set the header of our custom GUI
 inventory-name: "Narco"
+
+# Amount of rows to show in the /drugs GUI (1 = 9, 2 = 18, 3 = 27 etc)
+inventory-rows: 1
 
 # Sets the meta of all items
 item-meta:
@@ -17,10 +15,11 @@ item-meta:
 items:
   WHEAT:
     name: "Weed"
-    price: 500 # Price for 1 piece of the item
+    data-id: 10
+    price: 19.99
     color: DARK_GREEN
-    cmd: /say {PLAYER} has just smoked some weed! # Execute command upon congestion
+    message: "{PLAYER}, you have just smoked some weed!"
     effects:
       JUMP:
         duration: 10 # Amount of time (in seconds) to apply the effect for
-        amplifier: 1 # Level of the effect (default: 1)
+        amplifier: 1 # Level of the effect
